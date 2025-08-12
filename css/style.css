@@ -1,79 +1,103 @@
-
+/*
+ * ----------------------------------------------------
+ * Estilos Gerais e Corpo da Página
+ * ----------------------------------------------------
+ */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
-    height: 100vh;
+    min-height: 100vh; /* 'min-height' é mais seguro que 'height' */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-    z-index: 1;
 }
 
 body::before {
     content: "";
-    position: absolute;
+    position: fixed; /* 'fixed' é mais apropriado para o background */
     top: 0;
     left: 0;
-    height: 100vh;
-    width: 100vw;
-    background: url('../img/back.png') no-repeat center top fixed;
+    height: 100%; /* '100%' é mais consistente */
+    width: 100%;
+    background: url('../img/back.png') no-repeat center center fixed;
     background-size: cover;
     opacity: 0.5;
     z-index: -1;
 }
 
-header{
-    background-color: rgba(51,51,51,0.8);
-    color:#fff;
-    padding: 10px 0;
-    height: 20px;
-    }
-    
-    
-    ul{
+/*
+ * ----------------------------------------------------
+ * Estilos do Cabeçalho
+ * ----------------------------------------------------
+ */
+header {
+    background-color: rgba(51, 51, 51, 0.8);
+    padding: 10px 20px;
+    color: #fff;
+    text-align: center; /* Centraliza a navegação */
+}
+
+header nav ul {
     list-style: none;
     margin: 0;
-    padding:0;
-    }
-    
-    ul li{
-    display: inline;
-    margin : 0 15px;
-    }
-    
-    ul li a {
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline-block; /* 'inline-block' é mais flexível */
+    margin: 0 15px;
+}
+
+header nav ul li a {
     color: #fff;
     text-decoration: none;
-    }
+    font-weight: bold; /* Adiciona negrito para destaque */
+    transition: color 0.3s ease; /* Adiciona uma transição para o efeito hover */
+}
 
-    main {
-    position: relative;
-    padding: 5px;
-    background-color: #5c1b8886;
+header nav ul li a:hover {
+    color: #f0c345; /* Uma cor de destaque ao passar o mouse */
+}
+
+/*
+ * ----------------------------------------------------
+ * Estilos do Conteúdo Principal
+ * ----------------------------------------------------
+ */
+main {
+    flex: 1; /* Garante que o main ocupe o espaço restante */
+    padding: 20px;
+    background-color: rgba(92, 27, 136, 0.6); /* Cor do main com menos opacidade */
     border-radius: 10px;
     max-width: 1000px;
-    margin: 0 auto;
-   
-    }
-    footer {
-    background-color: rgba(51,51,51,0.8);
-    color: #6e0808;
-    padding: 5px 0;
-    height: 20px;
+    margin: 20px auto;
+    color: #fff;
+}
+
+/*
+ * ----------------------------------------------------
+ * Estilos do Rodapé
+ * ----------------------------------------------------
+ */
+footer {
+    background-color: rgba(51, 51, 51, 0.8);
+    color: #fff; /* Cor do texto do footer mais clara */
+    padding: 10px 0;
     text-align: center;
-    position: fixed;
-    bottom: 0;
     width: 100%;
+    margin-top: auto; /* Empurra o rodapé para baixo */
+}
 
-    }
-    section#home img {
-        max-width: 100px;
-        border-radius: 50%;
-        
-        height: auto;
-        padding: 5px;
-
-    }
+/*
+ * ----------------------------------------------------
+ * Estilos da Seção Home
+ * ----------------------------------------------------
+ */
+section#home img {
+    max-width: 150px; /* Aumenta um pouco o tamanho da imagem */
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 20px; /* Centraliza a imagem e adiciona espaço abaixo */
+    border: 3px solid #fff; /* Adiciona uma borda branca */
+}
