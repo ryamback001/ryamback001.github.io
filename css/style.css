@@ -1,79 +1,143 @@
-
-body {
-    font-family: Arial, sans-serif;
+/* Configurações Gerais */
+* {
     margin: 0;
     padding: 0;
-    color: #333;
-    height: 100vh;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-    z-index: 1;
-}
-
-body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    background: url('../img/back.png') no-repeat center top fixed;
+    /* Substitua pelo link da sua imagem no GitHub ou uma URL direta */
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('../img/back.png') no-repeat center center fixed;
     background-size: cover;
-    opacity: 0.5;
-    z-index: -1;
 }
 
-header{
-    background-color: rgba(51,51,51,0.8);
-    color:#fff;
-    padding: 10px 0;
-    height: 20px;
-    }
-    
-    
-    ul{
+/* Navegação */
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.container-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+nav ul {
     list-style: none;
-    margin: 0;
-    padding:0;
-    }
-    
-    ul li{
-    display: inline;
-    margin : 0 15px;
-    }
-    
-    ul li a {
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
     color: #fff;
     text-decoration: none;
-    }
+    transition: 0.3s;
+}
 
-    main {
-    position: relative;
-    padding: 5px;
-    background-color: #837b8886;
-    border-radius: 10px;
-    max-width: 1000px;
-    margin: 0 auto;
-   
-    }
-    footer {
-    background-color: rgba(12, 10, 10, 0.8);
-    color: #6e0808;
-    padding: 5px 0;
-    height: 20px;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
+nav ul li a:hover {
+    color: #00d2ff;
+}
+
+/* Cartão Principal (Glassmorphism) */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.hero-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 800px;
     width: 100%;
+    text-align: center;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
 
-    }
-    section#home img {
-        max-width: 100px;
-        border-radius: 50%;
-        
-        height: auto;
-        padding: 5px;
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #00d2ff;
+}
 
-    }
+.subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Tags de Tecnologia */
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.tech-tags span {
+    background: rgba(0, 210, 255, 0.2);
+    border: 1px solid #00d2ff;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+}
+
+/* Contato */
+.contact-box {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.link-destaque {
+    color: #00d2ff;
+    text-decoration: none;
+    display: block;
+    margin: 10px 0;
+}
+
+.btn-linkedin {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #0077b5;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-linkedin:hover {
+    background: #005a8a;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0,0,0,0.8);
+    font-size: 0.9rem;
+}
