@@ -1,2 +1,2 @@
 # ryamback001.github.io
-É um site de portefólio de Rian Souza 
+É um site de portifólio de Rian Souza 
