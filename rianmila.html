@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Para Mila, com Amor</title>
+    <link rel="stylesheet" href="css2/style2.css">
+</head>
+<body id="corpo">
+
+    <audio id="musica-tema" loop>
+        <source src="music/tema.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="tela-preta">
+        <h1 class="msg-final">Obrigado por tudo ❤️</h1>
+    </div>
+
+    <main class="content" id="conteudo-principal">
+        <header>
+            <h1 id="titulo">Mila, quer casar comigo?</h1>
+        </header>
+
+        <section class="media-section">
+            <div class="media-wrapper" id="container-midia">
+                <img src="img2/rianmilateen.jpg" id="foto-teen" class="couple-photo" alt="Nossa foto">
+                <video id="video-player" playsinline loop>
+                    <source src="img2/marry.mp4" type="video/mp4">
+                </video>
+            </div>
+        </section>
+
+        <section class="message-section" id="caixa-msg">
+            <div class="glass-card">
+                <p>Cada momento ao seu lado é uma página de um livro que eu nunca quero parar de escrever.</p>
+                <div class="botoes-container">
+                    <button class="btn-sim" onclick="finalizar(event)">SIM</button>
+                    <button class="btn-nao" onclick="encerrar()">NÃO</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const video = document.getElementById('video-player');
+        const foto = document.getElementById('foto-teen');
+        const wrapper = document.getElementById('container-midia');
+        const corpo = document.getElementById('corpo');
+        const telaPreta = document.getElementById('tela-preta');
+        const musica = document.getElementById('musica-tema');
+
+        function finalizar(event) {
+            event.stopPropagation();
+            
+            // 1. Esconde o título e os botões
+            document.getElementById('titulo').style.opacity = '0';
+            document.getElementById('caixa-msg').style.opacity = '0';
+            
+            // 2. Muda o fundo para a foto atual
+            corpo.style.backgroundImage = "url('img2/rianmilayoung.jpg')";
+            
+            // 3. Ativa o vídeo na parte inferior
+            foto.style.display = 'none';
+            video.style.display = 'block';
+            wrapper.classList.remove('video-focado'); // Remove centralização se houver
+            wrapper.classList.add('video-inferior'); // Nova classe para o rodapé
+            
+            // 4. Inicia áudio e vídeo
+            video.play();
+            musica.play();
+            musica.volume = 0.7;
+
+            setTimeout(() => {
+                alert('❤️ Mal posso esperar pelo nosso "para sempre"!');
+            }, 800);
+        }
+
+        function encerrar() {
+            document.getElementById('conteudo-principal').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('conteudo-principal').style.display = 'none';
+                telaPreta.style.display = 'flex';
+                corpo.style.background = 'black';
+                corpo.style.backgroundImage = 'none';
+                musica.pause();
+            }, 500);
+        }
+    </script>
+</body>
+</html>
